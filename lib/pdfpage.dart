@@ -18,7 +18,7 @@ class Homepage extends StatelessWidget {
               height: 30,
             ),
             ElevatedButton(onPressed: () async {
-              final pdfFile = await PdfInvoiceApi.generate();
+              final pdfFile = await PdfInvoiceApi.generate(context);
 
                     PdfApi.openFile(pdfFile);
             }, child: const Text('Print')),

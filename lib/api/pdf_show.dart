@@ -5,7 +5,7 @@ import 'package:pdf/widgets.dart';
 import 'package:ramzan_hospital_pdf/api/pdf_api.dart';
 
 class PdfInvoiceApi {
-  static Future<File> generate() async {
+  static Future<File> generate(context) async {
     final pdf = Document();
 
     pdf.addPage(MultiPage(
@@ -14,7 +14,7 @@ class PdfInvoiceApi {
       ],
     ));
 
-    return PdfApi.saveDocument(name: 'Ramzan Hospital', pdf: pdf);
+    return PdfApi.saveDocument(name: 'Ramzan Hospital', pdf: pdf,context: context);
   }
 
   static Widget buildPdf() {
